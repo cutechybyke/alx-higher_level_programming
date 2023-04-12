@@ -5,9 +5,11 @@
 
 def write_file(filename="", text=""):
     """ this is a Function that writes to a text file
+
     Args:
         filename: filename
         text: text to write
+
     Raise
         Exception: when the file can be opened
     """
