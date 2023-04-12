@@ -1,7 +1,15 @@
 #!/usr/bin/python3
-"""This here contains the read_file function for this task"""
+""" Here is a module that contains a function that reads from a file """
+
 
 def read_file(filename=""):
-    """for reading a text file in (UTF8) and prints ti the stdout"""
-    with open(filename, "r", encoding="utf-8") as f:
-        print(f.read(), end="")
+    """ this is a function that reads from a file
+    Args:
+        filename: filename
+    Raises
+        Exception: this occurs when the file can be opened
+    """
+
+    with open(filename, 'r', encoding="utf-8") as f:
+        read_data = f.read()
+        print(read_data, end='')
