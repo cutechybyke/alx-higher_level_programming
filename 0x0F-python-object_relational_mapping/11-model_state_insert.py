@@ -22,4 +22,3 @@ if __name__ == "__main__":
     session.commit()
     # Print the ID of the newly added state
     print(louisiana.id)
-    
