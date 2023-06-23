@@ -15,10 +15,9 @@ if __name__ == "__main__":
     session = Session()
 
     # Search for the specified state in database
-    louisiana = State(name="Louisiana")
-    # Add the new statete to session
-    session.add(louisiana)
+    state = session.query(State).filter_by(id=2).first()
+    # Update the new statete to session
+    state.name = "New Mexico"
     # Commit the session to persist the changes
     session.commit()
     # Print the ID of the newly added state
-    print(louisiana.id)

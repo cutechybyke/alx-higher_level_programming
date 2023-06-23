@@ -14,11 +14,7 @@ if __name__ == "__main__":
     # Create a session
     session = Session()
 
-    # Search for the specified state in database
-    louisiana = State(name="Louisiana")
-    # Add the new statete to session
-    session.add(louisiana)
-    # Commit the session to persist the changes
-    session.commit()
-    # Print the ID of the newly added state
-    print(louisiana.id)
+    # Retrieve all states from the database
+    for city, state in session.query(City, State).filter(City.state_id == State.id).order_by(City.id):
+        # Print the city and state informations
+        print("{}: ({}) {}".format(state.name, city.id, city.name))

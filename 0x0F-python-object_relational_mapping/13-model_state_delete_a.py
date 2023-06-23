@@ -14,11 +14,11 @@ if __name__ == "__main__":
     # Create a session
     session = Session()
 
-    # Search for the specified state in database
-    louisiana = State(name="Louisiana")
-    # Add the new statete to session
-    session.add(louisiana)
+    # Retrieve all states from the database
+    for state in session.query(State):
+        # Check if the state's name contains the letter "a"
+        if "a" in state.name:
+            # Delete the state from the session
+            session.delete(state)
     # Commit the session to persist the changes
     session.commit()
-    # Print the ID of the newly added state
-    print(louisiana.id)
