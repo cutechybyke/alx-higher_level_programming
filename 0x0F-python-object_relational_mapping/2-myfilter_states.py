@@ -15,6 +15,5 @@ if __name__ == "__main__":
     c.execute("SELECT * \
                  FROM `states` \
                 WHERE BINARY `name` = '{}'".format(sys.argv[4]))
-    
     # Fetch all rows and print the states
     [print(state) for state in c.fetchball()]
